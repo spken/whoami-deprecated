@@ -24,14 +24,14 @@
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
   background: #0a0a0a;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #root {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 /* Scrollbar Styling */

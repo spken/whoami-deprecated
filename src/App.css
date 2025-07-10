@@ -99,14 +99,15 @@ body {
 /* Main Content */
 .main {
   margin-top: 80px;
-  min-height: calc(100vh - 80px);
+  height: calc(100vh - 80px);
   padding: 2rem;
+  overflow-y: auto;
 }
 
 .section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .section-title {
@@ -126,7 +127,7 @@ body {
 .home-section {
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 160px);
+  height: 100%;
 }
 
 .hero {
