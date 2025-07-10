@@ -236,12 +236,14 @@ body {
 
 .cursor {
   color: var(--primary-color);
-  animation: blink 1s infinite;
+  animation: blink 1.2s infinite;
+  font-weight: normal;
+  display: inline;
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
 }
 
 /* About Section */

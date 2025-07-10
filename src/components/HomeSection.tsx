@@ -4,7 +4,7 @@ import { useTerminalEffect } from '../hooks/useTerminalEffect'
 import { terminalCommands } from '../data/portfolio'
 
 export const HomeSection = () => {
-  const { terminalText, isTyping } = useTerminalEffect(terminalCommands)
+  const { terminalText, isTyping } = useTerminalEffect(terminalCommands, 75, 1200)
 
   return (
     <motion.section

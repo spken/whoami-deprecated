@@ -17,8 +17,10 @@ export const Terminal = ({ text, isTyping, title = "spken@matias:~" }: TerminalP
           <span className="terminal-title">{title}</span>
         </div>
         <div className="terminal-body">
-          <pre className="terminal-text">{text}</pre>
-          {isTyping && <span className="cursor">_</span>}
+          <pre className="terminal-text">
+            {text}
+            {isTyping && <span className="cursor">█</span>}
+          </pre>
         </div>
       </div>
     </div>
