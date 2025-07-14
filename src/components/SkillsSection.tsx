@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion'
-import { Code } from 'lucide-react'
-import { skills } from '../data/portfolio'
+import { motion } from "framer-motion";
+import { Code } from "lucide-react";
+import { skills } from "../data/portfolio";
 
 export const SkillsSection = () => {
   return (
@@ -26,13 +26,15 @@ export const SkillsSection = () => {
           >
             <h3 className="skill-category">{skillCategory.category}</h3>
             <div className="skill-items">
-              {skillCategory.items.map(item => (
-                <span key={item} className="skill-item">{item}</span>
+              {skillCategory.items.map((item) => (
+                <span key={item} className="skill-item">
+                  {item}
+                </span>
               ))}
             </div>
           </motion.div>
         ))}
       </div>
     </motion.section>
-  )
-}
+  );
+};

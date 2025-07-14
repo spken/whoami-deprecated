@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import {
   Navigation,
   HomeSection,
   AboutSection,
   SkillsSection,
   ProjectsSection,
-  ContactSection
-} from './components'
-import { sections } from './data/portfolio'
-import './App.css'
+  ContactSection,
+} from "./components";
+import { sections } from "./data/portfolio";
+import "./App.css";
 
 function App() {
-  const [currentSection, setCurrentSection] = useState('home')
+  const [currentSection, setCurrentSection] = useState("home");
 
   const renderSection = () => {
     switch (currentSection) {
-      case 'home':
-        return <HomeSection />
-      case 'about':
-        return <AboutSection />
-      case 'skills':
-        return <SkillsSection />
-      case 'projects':
-        return <ProjectsSection />
-      case 'contact':
-        return <ContactSection />
+      case "home":
+        return <HomeSection onSectionChange={setCurrentSection} />;
+      case "about":
+        return <AboutSection />;
+      case "skills":
+        return <SkillsSection />;
+      case "projects":
+        return <ProjectsSection />;
+      case "contact":
+        return <ContactSection />;
       default:
-        return <HomeSection />
+        return <HomeSection onSectionChange={setCurrentSection} />;
     }
-  }
+  };
 
   return (
     <div className="app">
@@ -40,12 +40,10 @@ function App() {
       />
 
       <main className="main">
-        <AnimatePresence mode="wait">
-          {renderSection()}
-        </AnimatePresence>
+        <AnimatePresence mode="wait">{renderSection()}</AnimatePresence>
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

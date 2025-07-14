@@ -1,7 +1,11 @@
-import { motion } from 'framer-motion'
-import Terminal from './Terminal'
+import { motion } from "framer-motion";
+import Terminal from "./Terminal";
 
-export const HomeSection = () => {
+interface HomeSectionProps {
+  onSectionChange?: (sectionId: string) => void;
+}
+
+export const HomeSection = ({ onSectionChange }: HomeSectionProps) => {
   return (
     <motion.section
       key="home"
@@ -36,9 +40,19 @@ export const HomeSection = () => {
           >
             Developer | Cybersecurity Enthusiast | CTF Player
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="hero-cta"
+            onClick={() => onSectionChange?.("about")}
+          >
+            <span className="cta-text">Learn more about my journey</span>
+            <span className="cta-arrow">→</span>
+          </motion.div>
         </div>
         <Terminal interactive={true} />
       </div>
     </motion.section>
-  )
-}
+  );
+};
