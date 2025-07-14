@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion'
-import { Terminal } from './Terminal'
-import { useTerminalEffect } from '../hooks/useTerminalEffect'
-import { terminalCommands } from '../data/portfolio'
+import Terminal from './Terminal'
 
 export const HomeSection = () => {
-  const { terminalText, isTyping } = useTerminalEffect(terminalCommands, 75, 1200)
-
   return (
     <motion.section
       key="home"
@@ -41,7 +37,7 @@ export const HomeSection = () => {
             Cybersecurity Specialist | Ethical Hacker | Digital Guardian
           </motion.p>
         </div>
-        <Terminal text={terminalText} isTyping={isTyping} />
+        <Terminal interactive={true} />
       </div>
     </motion.section>
   )
