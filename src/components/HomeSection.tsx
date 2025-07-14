@@ -34,7 +34,7 @@ export const HomeSection = () => {
             transition={{ delay: 0.6 }}
             className="hero-description"
           >
-            Cybersecurity Specialist | Ethical Hacker | Digital Guardian
+            Developer | Cybersecurity Enthusiast | CTF Player
           </motion.p>
         </div>
         <Terminal interactive={true} />

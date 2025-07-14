@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Shield } from 'lucide-react'
+import { User } from 'lucide-react'
 import { stats } from '../data/portfolio'
 
 export const AboutSection = () => {
@@ -12,19 +12,24 @@ export const AboutSection = () => {
       className="section about-section"
     >
       <h2 className="section-title">
-        <Shield className="section-icon" />
+        <User className="section-icon" />
         About Me
       </h2>
       <div className="about-content">
         <div className="about-text">
           <p>
-            Welcome to my digital fortress. I'm Matias Varela Cousillas, operating under the handle "spken" 
-            in the cybersecurity realm. With a passion for ethical hacking and digital security, I specialize 
-            in identifying vulnerabilities before malicious actors can exploit them.
+            Hi, I'm Matias Varela Cousillas a.k.a. spken! I'm a developer with a growing passion for cybersecurity. 
+            While my professional background focuses on software development, I've developed a deep fascination 
+            with ethical hacking, security research, and digital forensics as a personal hobby.
           </p>
           <p>
-            My journey in cybersecurity spans penetration testing, security research, and vulnerability 
-            assessment. I believe in making the digital world safer, one vulnerability at a time.
+            In my spare time, I love diving into Capture The Flag (CTF) challenges, exploring vulnerability 
+            assessment tools, and learning about penetration testing methodologies. I'm constantly expanding 
+            my knowledge through platforms like TryHackMe, HackTheBox, and various security courses.
+          </p>
+          <p>
+            My goal is to bridge my development skills with cybersecurity expertise, contributing to safer 
+            digital environments while continuing to learn and grow in this exciting field.
           </p>
           <div className="stats">
             {stats.map((stat) => {
