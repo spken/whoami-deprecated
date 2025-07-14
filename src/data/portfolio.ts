@@ -115,7 +115,7 @@ export const contactLinks = [
     label: "LinkedIn",
   },
   {
-    href: "mailto:matias.varela.cousillas@gmail.com",
+    href: "mailto:varematias11@gmail.com",
     icon: Mail,
     label: "Email",
   },
