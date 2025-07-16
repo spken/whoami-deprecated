@@ -10,16 +10,3 @@ export interface SkillCategory {
   category: string;
   items: string[];
 }
-
-export interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  status: "Active" | "Completed" | "In Progress";
-}
-
-export interface Stat {
-  icon: LucideIcon;
-  number: string;
-  label: string;
-}

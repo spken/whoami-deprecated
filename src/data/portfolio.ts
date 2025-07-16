@@ -4,13 +4,12 @@ import {
   Code,
   Lock,
   Eye,
-  Zap,
   Github,
   Linkedin,
   Mail,
   Download,
 } from "lucide-react";
-import type { Section, SkillCategory, Project, Stat } from "../types";
+import type { Section, SkillCategory } from "../types";
 
 export const sections: Section[] = [
   { id: "home", label: "Home", icon: Terminal },
