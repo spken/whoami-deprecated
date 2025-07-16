@@ -18,11 +18,13 @@ export const AboutSection = () => {
         <div className="about-text">
           <p>
             Hi, I'm Matias Varela Cousillas a.k.a.{" "}
-            <span className="highlight glow">spken</span>! I'm currently part of a team developing
-            AI-driven solutions, with a past in security-first, DevSecOps, and Zero-Trust development practices.
-            While my background is in software development, I've come to recognize how critical security
-            is to the development process. My passion for cybersecurity continues to grow alongside my development skills.
-
+            <span className="highlight glow">spken</span>! I'm currently part of
+            a team developing AI-driven solutions, with a past in
+            security-first, DevSecOps, and Zero-Trust development practices.
+            While my background is in software development, I've come to
+            recognize how critical security is to the development process. My
+            passion for cybersecurity continues to grow alongside my development
+            skills.
           </p>
           <p>
             What started as curiosity about{" "}
@@ -30,13 +32,14 @@ export const AboutSection = () => {
             into an obsession with
             <em className="highlight"> "how things break."</em> Building secure
             applications made me wonder: what happens when they're not secure?
-            This question led me down the rabbit hole of exploring vulnerabilities
-            and attack vectors.
+            This question led me down the rabbit hole of exploring
+            vulnerabilities and attack vectors.
           </p>
           <p>
             My goal is to bridge my development skills with cybersecurity
             expertise, contributing to safer digital environments while
-            continuing to learn and grow in this field, especially with the new vibe-coding hype.
+            continuing to learn and grow in this field, especially with the new
+            vibe-coding hype.
           </p>
           <div className="personal-note">
             <motion.div
@@ -51,11 +54,14 @@ export const AboutSection = () => {
               </div>
               <div className="note-content">
                 <p className="motto">
-                  <span className="highlight">"Security-first development, AI-powered innovation."</span>
+                  <span className="highlight">
+                    "Security-first development, AI-powered innovation."
+                  </span>
                 </p>
                 <p className="motto-subtitle">
-                  Building secure applications while exploring how they can break.
-                  The future lies in combining development skills with cybersecurity expertise.
+                  Building secure applications while exploring how they can
+                  break. The future lies in combining development skills with
+                  cybersecurity expertise.
                 </p>
               </div>
             </motion.div>

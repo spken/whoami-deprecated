@@ -22,7 +22,14 @@ export const sections: Section[] = [
 export const skills: SkillCategory[] = [
   {
     category: "Professional Development",
-    items: ["Python", "React", "TypeScript", "Node.js", "Web Security", "Spring Boot"],
+    items: [
+      "Python",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Web Security",
+      "Spring Boot",
+    ],
   },
   {
     category: "Tools & Technologies",
