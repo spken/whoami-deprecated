@@ -51,11 +51,11 @@ export const AboutSection = () => {
               </div>
               <div className="note-content">
                 <p className="motto">
-                  <span className="highlight">"Security through understanding."</span>
+                  <span className="highlight">"Security-first development, AI-powered innovation."</span>
                 </p>
                 <p className="motto-subtitle">
-                  Every vulnerability tells a story, and every exploit teaches a lesson.
-                  I believe the best defenders are those who think like attackers.
+                  Building secure applications while exploring how they can break.
+                  The future lies in combining development skills with cybersecurity expertise.
                 </p>
               </div>
             </motion.div>
