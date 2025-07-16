@@ -64,6 +64,21 @@ body {
   color: var(--primary-color);
 }
 
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-toggle:hover {
+  color: var(--primary-color);
+}
+
 .nav-links {
   display: flex;
   gap: 1rem;
@@ -82,6 +97,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -680,31 +696,52 @@ body {
 @media (max-width: 768px) {
   .nav {
     padding: 1rem;
-    flex-direction: column;
-    gap: 1rem;
-    position: fixed;
     background: rgba(10, 10, 10, 0.98);
   }
 
-  .nav-brand {
-    font-size: 1.1rem;
+  .nav-toggle {
+    display: block;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border-color);
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav-link {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
-    min-width: auto;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-link:last-child {
+    margin-bottom: 0;
   }
 
   .main {
-    margin-top: 140px;
-    height: calc(100vh - 140px);
+    margin-top: 80px;
+    height: calc(100vh - 80px);
     padding: 1rem;
   }
 
@@ -783,7 +820,7 @@ body {
 
 @media (max-width: 480px) {
   .nav {
-    padding: 0.8rem;
+    padding: 0.8rem 1rem;
   }
 
   .nav-brand {
@@ -791,77 +828,111 @@ body {
   }
 
   .nav-links {
-    gap: 0.3rem;
+    padding: 0.8rem;
   }
 
   .nav-link {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.75rem;
-    gap: 0.3rem;
+    padding: 0.8rem;
+    font-size: 0.85rem;
+    gap: 0.4rem;
   }
 
   .main {
-    margin-top: 130px;
-    height: calc(100vh - 130px);
-    padding: 0.8rem;
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    padding: 1rem 0.8rem;
+  }
+
+  .section {
+    padding: 0;
+  }
+
+  .hero {
+    gap: 1.5rem;
+    padding: 1rem 0;
   }
 
   .hero-title {
     font-size: 2.2rem;
     line-height: 1.2;
+    margin-bottom: 0.8rem;
   }
 
   .hero-subtitle {
     font-size: 1.1rem;
+    margin-bottom: 0.4rem;
   }
 
   .hero-description {
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .hero-cta {
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
   }
 
   .section-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
-    text-align: center;
+    text-align: left;
   }
 
   .about-text p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
   }
 
   .skill-card,
   .project-card,
   .stat {
-    padding: 1.2rem;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .skill-category {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .skill-items {
+    gap: 0.6rem;
+  }
+
+  .skill-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
   }
 
   .contact-intro {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 
   .contact-link {
     padding: 1rem;
     font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .terminal {
+    margin-top: 1rem;
   }
 
   .terminal-body {
-    padding: 0.6rem;
+    padding: 0.8rem;
     min-height: 160px;
-    max-height: 300px;
+    max-height: 280px;
   }
 
   .terminal-text {
     font-size: 0.75rem;
-    line-height: 1.3;
-    text-align: left;
+    line-height: 1.4;
   }
 
   .terminal-input,
@@ -872,16 +943,17 @@ body {
 
   .terminal-welcome {
     font-size: 0.75rem;
+    margin-bottom: 0.8rem;
   }
 
   .terminal-input-line {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .terminal-prompt {
-    margin-right: 0;
+    margin-right: 0.5rem;
   }
 
   .terminal-title {
@@ -895,38 +967,87 @@ body {
 }
 
 @media (max-width: 360px) {
+  .nav {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .nav-brand {
+    font-size: 0.9rem;
+  }
+
+  .nav-links {
+    padding: 0.6rem;
+  }
+
+  .nav-link {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+
   .main {
-    padding: 0.5rem;
+    padding: 0.8rem 0.6rem;
+    margin-top: 65px;
+    height: calc(100vh - 65px);
+  }
+
+  .hero {
+    padding: 0.5rem 0;
+    gap: 1.2rem;
   }
 
   .hero-title {
     font-size: 1.8rem;
+    margin-bottom: 0.6rem;
   }
 
-  .nav-link {
-    padding: 0.25rem 0.4rem;
-    font-size: 0.7rem;
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.85rem;
+    margin-bottom: 1.2rem;
   }
 
   .section-title {
     font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
   }
 
   .skill-card,
   .project-card,
   .stat {
-    padding: 1rem;
+    padding: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-category {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-item {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .contact-link {
+    padding: 0.8rem;
+    font-size: 0.85rem;
   }
 
   .terminal-body {
-    padding: 0.5rem;
+    padding: 0.6rem;
     min-height: 140px;
-    max-height: 250px;
+    max-height: 240px;
   }
 
   .terminal-text {
     font-size: 0.7rem;
-    text-align: left;
   }
 
   .terminal-input,
@@ -937,36 +1058,101 @@ body {
 
   .terminal-welcome {
     font-size: 0.7rem;
-  }
-
-  .terminal-input-line {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-
-  .terminal-prompt {
-    margin-right: 0;
+    margin-bottom: 0.6rem;
   }
 }
 
 /* Touch-specific improvements */
 @media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects that don't work on touch */
   .nav-link:hover,
   .contact-link:hover,
-  .skill-card:hover {
+  .skill-card:hover,
+  .project-card:hover {
     transform: none;
     box-shadow: none;
+    color: inherit;
+    border-color: inherit;
   }
 
+  /* Add better touch feedback */
   .nav-link:active,
-  .contact-link:active {
+  .contact-link:active,
+  .hero-cta:active {
     transform: scale(0.98);
     transition: transform 0.1s ease;
   }
 
+  /* Ensure touch targets are large enough */
+  .nav-link {
+    min-height: 44px;
+    padding: 0.8rem 1rem;
+  }
+
+  .contact-link {
+    min-height: 60px;
+    padding: 1.2rem;
+  }
+
+  .hero-cta {
+    min-height: 44px;
+    padding: 0.8rem 0;
+  }
+
+  /* Remove problematic hover states */
   .skill-item:hover {
     color: var(--text-secondary);
     border-color: var(--border-color);
+  }
+
+  /* Better spacing for touch */
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .contact-links {
+    gap: 1rem;
+  }
+
+  .skill-items {
+    gap: 0.8rem;
+  }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 768px) {
+  /* Improve scrolling on mobile */
+  .main {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Better text selection on mobile */
+  .hero-title,
+  .hero-subtitle,
+  .hero-description {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  /* Prevent zoom on input focus */
+  .terminal-input {
+    font-size: 16px;
+  }
+
+  /* Better button spacing */
+  .nav-link,
+  .contact-link {
+    margin: 0.2rem 0;
+  }
+
+  /* Improve readability */
+  .about-text p,
+  .contact-intro {
+    text-align: left;
+    hyphens: auto;
+    word-wrap: break-word;
   }
 }

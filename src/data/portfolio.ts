@@ -49,12 +49,12 @@ export const skills: SkillCategory[] = [
 export const terminalCommands = [
   "> whoami",
   "matias@varela-cousillas",
-  "> cat interests.txt",
-  "Developer | Cybersecurity Enthusiast | CTF Player",
-  "> ls -la hobbies/",
-  "Ethical Hacking | Bug Bounty | Security Research",
-  '> echo "Learning security, one challenge at a time"',
-  "Learning security, one challenge at a time",
+  "> cat about.txt",
+  "Developer | AI Engineer | Securitty Enthusiast",
+  "> ls skills/",
+  "Python React TypeScript Node.js Security",
+  '> echo "Building secure applications"',
+  "Building secure applications",
 ];
 
 export const contactLinks = [
