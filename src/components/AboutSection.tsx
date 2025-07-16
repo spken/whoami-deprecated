@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
-import { stats } from "../data/portfolio";
 
 export const AboutSection = () => {
   return (
@@ -19,11 +18,11 @@ export const AboutSection = () => {
         <div className="about-text">
           <p>
             Hi, I'm Matias Varela Cousillas a.k.a.{" "}
-            <span className="highlight glow">spken</span>! I'm a developer with
-            a growing passion for cybersecurity. While my professional
-            background focuses on software development, I've developed a deep
-            fascination with ethical hacking, security research, and digital
-            forensics as a personal hobby.
+            <span className="highlight glow">spken</span>! I'm currently part of a team developing
+            AI-driven solutions, with a past in security-first, DevSecOps, and Zero-Trust development practices.
+            While my background is in software development, I've come to recognize how critical security
+            is to the development process. My passion for cybersecurity continues to grow alongside my development skills.
+
           </p>
           <p>
             What started as curiosity about{" "}
@@ -31,32 +30,35 @@ export const AboutSection = () => {
             into an obsession with
             <em className="highlight"> "how things break."</em> Building secure
             applications made me wonder: what happens when they're not secure?
-            This question led me down the rabbit hole of vulnerability research
-            and ethical hacking.
-          </p>
-          <p>
-            In my spare time, I love diving into Capture The Flag (CTF)
-            challenges, exploring vulnerability assessment tools, and learning
-            about penetration testing methodologies. I'm constantly expanding my
-            knowledge through platforms like TryHackMe, HackTheBox, and various
-            security courses.
+            This question led me down the rabbit hole of exploring vulnerabilities
+            and attack vectors.
           </p>
           <p>
             My goal is to bridge my development skills with cybersecurity
             expertise, contributing to safer digital environments while
-            continuing to learn and grow in this exciting field.
+            continuing to learn and grow in this field, especially with the new vibe-coding hype.
           </p>
-          <div className="stats">
-            {stats.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <div key={stat.label} className="stat">
-                  <Icon className="stat-icon" />
-                  <span className="stat-number">{stat.number}</span>
-                  <span className="stat-label">{stat.label}</span>
-                </div>
-              );
-            })}
+          <div className="personal-note">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6 }}
+              className="note-card"
+            >
+              <div className="note-header">
+                <span className="note-prompt">spken@mindset:~$</span>
+                <span className="note-command">cat personal_motto.txt</span>
+              </div>
+              <div className="note-content">
+                <p className="motto">
+                  <span className="highlight">"Security through understanding."</span>
+                </p>
+                <p className="motto-subtitle">
+                  Every vulnerability tells a story, and every exploit teaches a lesson.
+                  I believe the best defenders are those who think like attackers.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

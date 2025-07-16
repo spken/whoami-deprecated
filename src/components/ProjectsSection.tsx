@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Lock } from "lucide-react";
-import { projects } from "../data/portfolio";
 
 export const ProjectsSection = () => {
   return (
@@ -15,33 +14,36 @@ export const ProjectsSection = () => {
         <Lock className="section-icon" />
         Projects
       </h2>
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
+      <div className="coming-soon-container">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.3 }}
+          className="coming-soon-message"
+        >
+          <motion.h3
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="project-card"
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="coming-soon-title"
           >
-            <div className="project-header">
-              <h3 className="project-title">{project.title}</h3>
-              <span
-                className={`project-status ${project.status.toLowerCase().replace(" ", "-")}`}
-              >
-                {project.status}
-              </span>
-            </div>
-            <p className="project-description">{project.description}</p>
-            <div className="project-tech">
-              {project.tech.map((tech) => (
-                <span key={tech} className="tech-tag">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+            Coming Soon
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="coming-soon-subtitle"
+          >
+            Projects in development
+          </motion.p>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 2, delay: 1.8 }}
+            className="coming-soon-line"
+          />
+        </motion.div>
       </div>
     </motion.section>
   );

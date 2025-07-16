@@ -23,72 +23,20 @@ export const sections: Section[] = [
 export const skills: SkillCategory[] = [
   {
     category: "Professional Development",
-    items: ["Python", "React", "TypeScript", "Node.js", "Java", "Spring boot"],
-  },
-  {
-    category: "Cybersecurity",
-    items: [
-      "Kali Linux",
-      "CTF Challenges",
-      "Network Analysis",
-      "Web Security",
-      "Ethical Hacking",
-    ],
+    items: ["Python", "React", "TypeScript", "Node.js", "Web Security", "Spring Boot"],
   },
   {
     category: "Tools & Technologies",
-    items: ["Git", "Docker", "Linux", "Neovim"],
+    items: ["Git", "Linux", "Neovim", "Docker", "Postman", "OWASP Top 10"],
   },
   {
     category: "Learning Focus",
     items: [
+      "Kali Linux",
+      "Burp Suite",
+      "CTF Challenges",
       "Penetration Testing",
-      "Bug Bounty",
-      "Security Research",
-      "TryHackMe",
     ],
-  },
-];
-
-export const projects: Project[] = [
-  {
-    title: "Interactive Terminal Portfolio",
-    description:
-      "A cybersecurity-themed portfolio website with an interactive CTF challenge",
-    tech: ["React", "TypeScript", "CSS"],
-    status: "Active",
-  },
-  {
-    title: "Home Network Security Lab",
-    description:
-      "Personal cybersecurity lab for practicing penetration testing and security analysis",
-    tech: ["VirtualBox", "Kali Linux", "Metasploitable"],
-    status: "Active",
-  },
-  {
-    title: "CTF Challenge Collection",
-    description:
-      "Personal collection of Capture The Flag challenges and writeups",
-    tech: ["Python", "Bash", "Various Tools"],
-    status: "In Progress",
-  },
-];
-
-export const stats: Stat[] = [
-  {
-    icon: Zap,
-    number: "25+",
-    label: "CTF Challenges Solved",
-  },
-  {
-    icon: Lock,
-    number: "15+",
-    label: "Security Labs Completed",
-  },
-  {
-    icon: Code,
-    number: "10+",
-    label: "Security Tools Explored",
   },
 ];
 
