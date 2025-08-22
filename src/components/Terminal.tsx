@@ -12,8 +12,22 @@ const Terminal: React.FC<TerminalProps> = ({ interactive = false }) => {
   const [currentUser, setCurrentUser] = useState("guest");
   const [awaitingPassword, setAwaitingPassword] = useState(false);
   const [pendingCommand, setPendingCommand] = useState<string[]>([]);
+  const [loginTime, setLoginTime] = useState('');
   const terminalBodyRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const now = new Date();
+    const timeString = now.toLocaleString('en-US', {
+      weekday: 'short',
+      month: 'short', 
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }) + ' on ttys000';
+    setLoginTime(timeString);
+  }, []);
 
   // File system simulation
   const fileSystem = {
@@ -325,7 +339,7 @@ const Terminal: React.FC<TerminalProps> = ({ interactive = false }) => {
       <div className="terminal-body" ref={terminalBodyRef}>
         <div className="terminal-content">
           <div className="terminal-welcome">
-            Last login: Mon Jan 15 10:30:42 on ttys000
+            Last login: {loginTime}
             <br />
             <div className="ctf-intro">
               <strong>CTF CHALLENGE:</strong> Find the hidden flag!

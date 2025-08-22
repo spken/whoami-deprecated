@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import Terminal from "./Terminal";
 
 interface HomeSectionProps {
@@ -6,6 +7,34 @@ interface HomeSectionProps {
 }
 
 export const HomeSection = ({ onSectionChange }: HomeSectionProps) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentTime, setCurrentTime] = useState('');
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    const updateTime = () => {
+      const now = new Date();
+      const timeString = now.toLocaleString('en-US', {
+        weekday: 'short',
+        month: 'short', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      }) + ' on ttys000';
+      setCurrentTime(timeString);
+    };
+
+    checkMobile();
+    updateTime();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <motion.section
       key="home"
@@ -51,7 +80,43 @@ export const HomeSection = ({ onSectionChange }: HomeSectionProps) => {
             <span className="cta-arrow">→</span>
           </motion.div>
         </div>
-        <Terminal interactive={true} />
+        {isMobile ? (
+          <div className="mobile-terminal-message">
+            <div className="terminal">
+              <div className="terminal-header">
+                <div className="terminal-buttons">
+                  <div className="btn btn-close"></div>
+                  <div className="btn btn-minimize"></div>
+                  <div className="btn btn-maximize"></div>
+                </div>
+                <div className="terminal-title">terminal</div>
+              </div>
+              <div className="terminal-body">
+                <div className="terminal-text">
+                  Last login: {currentTime}
+                  <br />
+                  <br />
+                  <span className="glow">guest@portfolio:~$</span> echo "For the full interactive experience"
+                  <br />
+                  For the full interactive experience
+                  <br />
+                  <span className="glow">guest@portfolio:~$</span> echo "Open on desktop 🖥️"
+                  <br />
+                  Open on desktop 🖥️
+                  <br />
+                  <span className="glow">guest@portfolio:~$</span> echo "CTF challenge awaits!"
+                  <br />
+                  CTF challenge awaits!
+                  <br />
+                  <span className="glow">guest@portfolio:~$</span>{" "}
+                  <span className="cursor">█</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <Terminal interactive={true} />
+        )}
       </div>
     </motion.section>
   );
