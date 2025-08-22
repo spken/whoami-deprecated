@@ -25,7 +25,7 @@ export const ContactSection = () => {
           {contactLinks.map((link) => {
             const Icon = link.icon;
             return (
-              <a key={link.label} href={link.href} className="contact-link">
+              <a key={link.label} href={link.href} className="contact-link" target="_blank" rel="noopener noreferrer">
                 <Icon className="contact-icon" />
                 <span>{link.label}</span>
               </a>
