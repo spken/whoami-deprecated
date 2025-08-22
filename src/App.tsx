@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import {
   Navigation,
+  CustomCursor,
   HomeSection,
   AboutSection,
   SkillsSection,
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <div className="app">
+      <CustomCursor />
       <Navigation
         sections={sections}
         currentSection={currentSection}
