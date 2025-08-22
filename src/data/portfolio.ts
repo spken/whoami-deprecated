@@ -35,7 +35,7 @@ export const skills: SkillCategory[] = [
     category: "Tools & Technologies",
     items: ["Git", "Linux", "Neovim", "Docker", "Postman", "OWASP Top 10"],
   },
-  {
+  /*{
     category: "Learning Focus",
     items: [
       "Kali Linux",
@@ -43,7 +43,7 @@ export const skills: SkillCategory[] = [
       "CTF Challenges",
       "Penetration Testing",
     ],
-  },
+  },*/
 ];
 
 export const terminalCommands = [

@@ -1,14 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
-
 :root {
   --primary-color: #00ff41;
   --secondary-color: #0080ff;
-  --accent-color: #ff0080;
-  --warning-color: #ffaa00;
   --background-dark: #0a0a0a;
   --background-darker: #050505;
   --surface-dark: #111111;
-  --surface-light: #1a1a1a;
   --text-primary: #ffffff;
   --text-secondary: #cccccc;
   --text-muted: #888888;
@@ -580,6 +575,52 @@ body {
   box-shadow: 0 0 10px var(--glow-color);
 }
 
+/* GitHub Link in Projects Section */
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--surface-dark);
+  color: var(--text-secondary);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.github-link:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--glow-color);
+  background: rgba(0, 255, 65, 0.05);
+}
+
+.github-icon {
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.github-link:hover .github-icon {
+  transform: scale(1.1);
+}
+
+.external-icon {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.github-link:hover .external-icon {
+  color: var(--primary-color);
+  transform: translateX(2px) translateY(-2px);
+}
+
 /* Personal Note Section */
 .personal-note {
   display: grid;
@@ -790,6 +831,12 @@ body {
     padding: 1.2rem;
   }
 
+  .github-link {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+  }
+
   .terminal {
     max-width: 100%;
     min-width: auto;
@@ -888,9 +935,7 @@ body {
     margin-bottom: 1rem;
   }
 
-  .skill-card,
-  .project-card,
-  .stat {
+  .skill-card {
     padding: 1rem;
     margin-bottom: 0.8rem;
   }
@@ -918,6 +963,13 @@ body {
     padding: 1rem;
     font-size: 0.9rem;
     margin-bottom: 0.8rem;
+  }
+
+  .github-link {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+    margin: 1.2rem 0;
+    gap: 0.5rem;
   }
 
   .terminal {
@@ -1018,9 +1070,7 @@ body {
     font-size: 0.9rem;
   }
 
-  .skill-card,
-  .project-card,
-  .stat {
+  .skill-card {
     padding: 0.8rem;
     margin-bottom: 0.6rem;
   }
@@ -1038,6 +1088,13 @@ body {
   .contact-link {
     padding: 0.8rem;
     font-size: 0.85rem;
+  }
+
+  .github-link {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+    margin: 1rem 0;
+    gap: 0.4rem;
   }
 
   .terminal-body {
@@ -1067,8 +1124,7 @@ body {
   /* Remove hover effects that don't work on touch */
   .nav-link:hover,
   .contact-link:hover,
-  .skill-card:hover,
-  .project-card:hover {
+  .skill-card:hover {
     transform: none;
     box-shadow: none;
     color: inherit;

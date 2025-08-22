@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
-import { Lock } from "lucide-react";
+import { Lock, Github, ExternalLink } from "lucide-react";
+import { contactLinks } from "../data/portfolio";
 
 export const ProjectsSection = () => {
+  const githubLink = contactLinks.find(link => link.label === "GitHub");
+
   return (
     <motion.section
       key="projects"
@@ -27,7 +30,7 @@ export const ProjectsSection = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="coming-soon-title"
           >
-            Coming Soon
+            Explore My Work
           </motion.h3>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -35,12 +38,27 @@ export const ProjectsSection = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="coming-soon-subtitle"
           >
-            Projects in development
+            Check out my repositories and contributions on GitHub
           </motion.p>
+          {githubLink && (
+            <motion.a
+              href={githubLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+              className="github-link"
+            >
+              <Github className="github-icon" />
+              <span>View GitHub Profile</span>
+              <ExternalLink className="external-icon" />
+            </motion.a>
+          )}
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ duration: 2, delay: 1.8 }}
+            transition={{ duration: 2, delay: 2.0 }}
             className="coming-soon-line"
           />
         </motion.div>

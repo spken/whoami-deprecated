@@ -32,8 +32,6 @@ export const AboutSection = () => {
             into an obsession with
             <em className="highlight"> "how things break."</em> Building secure
             applications made me wonder: what happens when they're not secure?
-            This question led me down the rabbit hole of exploring
-            vulnerabilities and attack vectors.
           </p>
           <p>
             My goal is to bridge my development skills with cybersecurity
@@ -53,14 +51,9 @@ export const AboutSection = () => {
                 <span className="note-command">cat personal_motto.txt</span>
               </div>
               <div className="note-content">
-                <p className="motto">
-                  <span className="highlight">
-                    "Security-first development, AI-powered innovation."
-                  </span>
-                </p>
                 <p className="motto-subtitle">
                   Building secure applications while exploring how they can
-                  break. The future lies in combining development skills with
+                  break is the future. It lies in combining development skills with
                   cybersecurity expertise.
                 </p>
               </div>

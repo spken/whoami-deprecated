@@ -38,7 +38,7 @@ export const HomeSection = ({ onSectionChange }: HomeSectionProps) => {
             transition={{ delay: 0.6 }}
             className="hero-description"
           >
-            Developer | Cybersecurity Enthusiast | CTF Player
+            Software Engineer
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
