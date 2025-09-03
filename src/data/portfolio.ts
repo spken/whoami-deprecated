@@ -74,7 +74,7 @@ export const contactLinks = [
     label: "Email",
   },
   {
-    href: "#",
+    href: "/cv_matias-varela-cousillas_2025.pdf",
     icon: Download,
     label: "Resume",
   },
