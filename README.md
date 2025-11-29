@@ -1,3 +1,3 @@
 ```bash
-whoami?
+whoami? - but deprecated?
 ```
